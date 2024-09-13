@@ -1,0 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('showTableBtn');
+    const table = document.getElementById('multiplicationTable');
+    const tableBody = table.querySelector('tbody');
+    let multiplier = 1;
+
+    button.addEventListener('click', () => {
+        if (table.classList.contains('hidden')) {
+            table.classList.remove('hidden');
+        }
+        
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
+        
+        const result = 9 * multiplier;
+        cell1.textContent = `9 x ${multiplier}`;
+        cell2.textContent = result;
+        
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        tableBody.appendChild(row);
+        
+        multiplier++;
+    });
+});
